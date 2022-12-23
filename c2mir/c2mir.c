@@ -7884,6 +7884,12 @@ static void get_int_node (c2m_ctx_t c2m_ctx, node_t *op, struct expr **e, struct
   (*e)->u.i_val = i;  // ???
 }
 
+long double
+nanl (const char *tagp)
+{
+  return __builtin_nanl("");
+}
+
 static struct expr *check_assign_op (c2m_ctx_t c2m_ctx, node_t r, node_t op1, node_t op2,
                                      struct expr *e1, struct expr *e2, struct type *t1,
                                      struct type *t2) {
